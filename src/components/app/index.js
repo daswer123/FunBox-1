@@ -1,8 +1,16 @@
 import React from "react";
+import Head from "../head";
+import CardList from "../cardList";
+
 
 const App = () => {
     return (
-        <h1>Hello world</h1>
+        <>
+            <Head/>
+            <main>
+                <CardList/>
+            </main>
+        </>
     )
 }
 

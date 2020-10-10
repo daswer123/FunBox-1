@@ -1,0 +1,59 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.products--list{
+    @include clear-list();
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 80px;
+}
+
+.products--list li{
+    margin-right: 80px;
+}
+
+.products--list li:last-child{
+    margin-right: 0;
+}
+
+@media (max-width: 1260px){
+    .products--list{
+        flex-wrap: wrap;
+    }
+
+    .products--list li{
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 1000px){
+    .products--list li{
+        margin-right: 0;
+    }
+
+    .products--list li:nth-child(2n){
+        margin-right: 0px;
+    }
+
+    .products--list li:nth-child(3n){
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 900px){
+    .card{
+        margin-bottom: 30px;
+    }
+
+    .products--list li:nth-child(2){
+        margin-right: 0;
+    }
+
+}
+
+
+@media (max-width: 800px){
+    .products--list li:nth-child(3n){
+        margin-right: 0;
+    }
+}

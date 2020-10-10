@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from "./components/app"
-import './index.css';
+
+import './styles/all.scss';
 
 
-
+//Вся структура проекта в компоненте App
 ReactDOM.render(
     <App/>,
   document.getElementById('root')

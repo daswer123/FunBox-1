@@ -1,0 +1,266 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.card{
+    width: 320px;
+    position: relative;
+
+    &--type{
+        text-align: center;
+        color: white;
+
+        font-size: 13px;
+
+        a{
+            color: $blue;
+            text-decoration: none;
+            border-bottom: 1px dashed  $blue;
+        }
+    }
+
+    &--content{
+        min-height: 460px;
+        position: relative;
+        background-color: white;
+        border-radius:  5px 0 15px 15px;
+
+        padding-left: 50px;
+
+        padding-top: 10px;
+
+        background-image: url("./cat.png");
+        background-repeat: no-repeat;
+        background-position: bottom left;
+
+        border: 5px solid $blue;
+        border-top:0;
+    }
+
+    &--title{
+        margin-bottom: 0;
+        margin-top: 0;
+
+        font-size: 48px;
+    }
+
+    &--top{
+        display: flex;
+        &-content{
+            margin-left: 45px;
+            background-color:white;
+            width: 100%;
+            border: 5px solid $blue;
+            border-bottom: 0;
+            border-left: 0;
+            border-radius:  3px 0px 0px 0px;
+        }
+    }
+
+
+    &--with-food{
+        font-size: 24px;
+    }
+
+    &--innerBox-list{
+        @include clear-list();
+        margin-top: 17px;
+        color: $grey;
+
+    }
+
+    &--weight{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+
+        user-select: none;
+
+        border-radius: 50%;
+        color: white;
+        background-color:$blue;
+
+        bottom:16px;
+        right:16px;
+
+        p{
+            font-size: 38px;
+            margin: 0;
+            padding: 0;
+            padding-top: 15px;
+
+            line-height: 30px;
+        }
+
+        span{
+            display: block;
+            font-size: 21px;
+        }
+    }
+
+
+}
+
+.card--top::before{
+    content: "";
+    position: absolute;
+
+    width: 60px;
+    height: 4px;
+
+    transform: rotate(-42deg);
+    z-index: 1;
+
+    top: 20px;
+    left:-5px;
+
+    background-color: $blue;
+}
+
+.promo-text{
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    color: $grey;
+    margin-left: 1px;
+    font-size: 16px;
+}
+
+.corner{
+    position: absolute;
+    display: block;
+    width: 45px;
+    height: 45px;
+
+
+    left: -1px;
+    border-bottom: 42px solid white;
+    border-left: 48px solid transparent;
+
+    border-radius:  0px 0px 0px 10px;
+}
+
+.amount{
+    font-weight: bold;
+}
+
+
+.selectedBorder{
+    border-color: #d91667;
+  }
+  
+  .selectedBackground{
+    background-color: #d91667;
+  }
+  
+  .before::before{
+    background-color: #d91667;
+  }
+  
+  .selectedBorderDisabled{
+    border-color: #b3b3b3;
+  }
+  
+  .selectedBackgroundDisabled{
+    background-color: black;
+  }
+  
+  .beforeDisabled::before{
+    background-color: #b3b3b3;
+  }
+  
+  .disabled--text{
+    color: #ffff66;
+    text-align: center;
+  }
+  
+  .disabled{
+    user-select: none;
+    .card--content::before{
+      position: absolute;
+      content : "";
+  
+      width: 100%;
+      height: 100%;
+  
+      background-color: rgba($color: #f2f2f2, $alpha: 0.5);
+      z-index: 2;
+      top: 0;
+      left: 0;
+  
+      border-radius:  5px 0 15px 15px;
+    }
+  
+    .corner {
+      border-bottom: 42px solid #F8F8F8;
+    }
+  
+    .promo-text{
+      background-color: #F8F8F8;
+    }
+  }
+
+  .onSelect{
+    display: none;
+}
+  
+
+.default:hover{
+    
+     .card--top::before{
+        background-color: $blueHover;
+    }
+
+    .card--weight{
+        background-color: $blueHover
+    }
+
+    .card--content{
+        border-color: $blueHover;
+    }
+
+    .card--top-content{
+        border-color: $blueHover;
+    }
+}
+
+.selected{
+
+    .promo-text{
+        display: none;
+    }
+ 
+    .onSelect{
+        display: block;
+    }
+
+}
+
+.selected:hover{
+    
+    .card--top::before{
+       background-color: $redHover;
+   }
+
+   .card--weight{
+       background-color: $redHover;
+   }
+
+   .card--content{
+       border-color: $redHover;
+   }
+
+   .card--top-content{
+       border-color: $redHover;
+   }
+   
+   .promo-text{
+       display: block;
+   }
+
+   .onSelect{
+       display: none;
+   }
+}
+
+
