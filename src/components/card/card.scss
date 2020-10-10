@@ -5,9 +5,12 @@
     width: 320px;
     position: relative;
 
+    cursor: pointer;
+
     &--type{
         text-align: center;
         color: white;
+        cursor: default;
 
         font-size: 13px;
 
@@ -176,6 +179,8 @@
   
   .disabled{
     user-select: none;
+    cursor: not-allowed;
+
     .card--content::before{
       position: absolute;
       content : "";
